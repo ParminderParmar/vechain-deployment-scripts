@@ -14,11 +14,8 @@ echo "---"
 #################################################################
 echo "Setting up environment variables"
 cd ~
-sudo touch ${HOME}/.profile
-echo "export PATH=$PATH:/usr/local/go/bin" >> ${HOME}/.profile
-echo "export GOPATH=$HOME/go" >> ${HOME}/.profile
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
+export GOPATH=~/go
 sudo mkdir -p $GOPATH/src
 echo "---"
 #################################################################
