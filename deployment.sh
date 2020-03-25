@@ -21,3 +21,9 @@ tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz
 chmod +x /usr/local/go/bin/go
 rm go1.14.linux-amd64.tar.gz
 echo "---"
+echo "Installing dep..."
+cd /usr/local/bin/
+wget https://github.com/golang/dep/releases/download/v0.5.4/dep-linux-amd64
+ln -s dep-linux-amd64 dep
+chmod +x /usr/local/bin/*
+echo "---"
