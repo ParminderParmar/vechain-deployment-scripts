@@ -54,3 +54,20 @@ cd $GOPATH/src/VeChain/thor
 make dep > /dev/null 2>&1
 make all > /dev/null 2>&1
 echo "---"
+################################################################
+# Configure to auto start thor node at boot					    #
+################################################################
+file=/etc/init.d/vechain
+if [ ! -e "$file" ]
+then
+	printf '%s\n%s\n' '#!/bin/sh' 'sudo bitcoind' | sudo tee /etc/init.d/vechain
+	sudo chmod +x /etc/init.d/vechain
+	sudo update-rc.d vechain defaults	
+fi
+################################################################
+# Start thor node					    #
+################################################################
+#$GOPATH/src/VeChain/thor/bin/thor -network "$network"  > /dev/null 2>&1
+$GOPATH/src/VeChain/thor/bin/thor -network "$network"
+echo "VeChain thor node has been setup successfully and is running..."
+exit 0
