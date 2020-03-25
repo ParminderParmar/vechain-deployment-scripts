@@ -10,6 +10,18 @@ network=$1
 echo "This script will setup a VeChain node."
 echo "---"
 #################################################################
+# Set environment paths #
+#################################################################
+echo "Setting up environment variables"
+cd ~
+touch ${HOME}/.profile
+echo "export PATH=$PATH:/usr/local/go/bin" >> ${HOME}/.profile
+echo "export GOPATH=$HOME/go" >> ${HOME}/.profile
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+mkdir -p $GOPATH/src
+echo "---"
+#################################################################
 # Updating and upgrading linux environment   #
 #################################################################
 echo "Performing a general system update (this might take a while)..."
@@ -28,8 +40,6 @@ echo "---"
 #################################################################
 echo "Installing go..."
 cd ~
-export GOPATH=$HOME/go
-mkdir -p $GOPATH/src
 wget https://dl.google.com/go/go1.14.linux-amd64.tar.gz > /dev/null 2>&1
 tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz > /dev/null 2>&1
 chmod +x /usr/local/go/bin/go > /dev/null 2>&1
@@ -39,7 +49,6 @@ echo "---"
 # Downloading and installing Dep dependency   #
 #################################################################
 echo "Installing dep..."
-export PATH=$PATH:/usr/local/go/bin
 cd /usr/local/bin/
 wget https://github.com/golang/dep/releases/download/v0.5.4/dep-linux-amd64 > /dev/null 2>&1
 ln -s dep-linux-amd64 dep > /dev/null 2>&1
