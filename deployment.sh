@@ -60,7 +60,7 @@ echo "---"
 file=/etc/init.d/vechain
 if [ ! -e "$file" ]
 then
-	printf '%s\n%s\n' '#!/bin/sh' 'sudo bitcoind' | sudo tee /etc/init.d/vechain
+	printf '%s\n%s\n' '#!/bin/sh' '$GOPATH/src/VeChain/thor/bin/thor -network $network' | sudo tee /etc/init.d/vechain
 	sudo chmod +x /etc/init.d/vechain
 	sudo update-rc.d vechain defaults	
 fi
