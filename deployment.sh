@@ -62,6 +62,7 @@ echo "---"
 echo "Installing and configuring VeChain..."
 sudo git clone https://github.com/vechain/thor.git $GOPATH/src/VeChain/thor > /dev/null 2>&1
 cd $GOPATH/src/VeChain/thor
+sudo chmod -R 777 ${HOME}/go
 make dep > /dev/null 2>&1
 make all > /dev/null 2>&1
 echo "---"
