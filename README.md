@@ -1,2 +1,2 @@
-# vechain-scripts
+# Vechain Scripts
 VeChain deployment scripts
