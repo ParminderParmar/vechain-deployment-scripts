@@ -19,7 +19,7 @@ sudo echo "export PATH=$PATH:/usr/local/go/bin" >> ${HOME}/.profile
 sudo echo "export GOPATH=$HOME/go" >> ${HOME}/.profile
 sudo export PATH=$PATH:/usr/local/go/bin
 sudo export GOPATH=${HOME}/go
-sudo chmod +xrw ${HOME}/go
+sudo chmod -R +xrw ${HOME}/go
 sudo mkdir -p $GOPATH/src
 echo "---"
 #################################################################
