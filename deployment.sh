@@ -27,7 +27,6 @@ sudo echo "export GOPATH=$HOME/go" >> ${HOME}/.profile
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=${HOME}/go
 export network=${network}
-sudo chmod -R 777 ${HOME}/go
 sudo mkdir -p $GOPATH/src
 echo "---"
 
