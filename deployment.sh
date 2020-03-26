@@ -9,6 +9,7 @@ network=$1
 #################################################################
 echo "This script will setup a VeChain node."
 echo "---"
+
 #################################################################
 # Set environment paths #
 #################################################################
@@ -23,6 +24,7 @@ export network=${network}
 sudo chmod -R 777 ${HOME}/go
 sudo mkdir -p $GOPATH/src
 echo "---"
+
 #################################################################
 # Updating and upgrading linux environment   #
 #################################################################
@@ -31,12 +33,14 @@ sudo apt-get update > /dev/null 2>&1
 sudo apt-get -y upgrade > /dev/null 2>&1
 sudo apt-get -y dist-upgrade > /dev/null 2>&1
 echo "---"
+
 #################################################################
 # Installing pre-requisites for VeChain deployment   #
 #################################################################
 echo "Installing prerequisites..."
 sudo apt-get -y install build-essential libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev liblz4-dev git > /dev/null 2>&1
 echo "---"
+
 #################################################################
 # Downloading and installing Go dependency #
 #################################################################
@@ -47,6 +51,7 @@ sudo tar -C /usr/local -xzf go1.14.linux-amd64.tar.gz > /dev/null 2>&1
 sudo chmod +x /usr/local/go/bin/go > /dev/null 2>&1
 sudo rm go1.14.linux-amd64.tar.gz > /dev/null 2>&1
 echo "---"
+
 #################################################################
 # Downloading and installing Dep dependency   #
 #################################################################
@@ -56,6 +61,7 @@ sudo wget https://github.com/golang/dep/releases/download/v0.5.4/dep-linux-amd64
 sudo ln -s dep-linux-amd64 dep > /dev/null 2>&1
 sudo chmod +x /usr/local/bin/* > /dev/null 2>&1
 echo "---"
+
 #################################################################
 # Cloning VeChain git repositor and build the complete suite  #
 #################################################################
@@ -66,6 +72,7 @@ sudo chmod -R 777 ${HOME}/go
 make dep > /dev/null 2>&1
 make all > /dev/null 2>&1
 echo "---"
+
 ################################################################
 # Configure to auto start thor node at boot					    #
 ################################################################
@@ -76,6 +83,7 @@ then
 	sudo chmod +x /etc/init.d/vechain
 	sudo update-rc.d vechain defaults	
 fi
+
 ################################################################
 # Start thor node					    #
 ################################################################
