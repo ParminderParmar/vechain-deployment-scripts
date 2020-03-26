@@ -18,7 +18,8 @@ sudo touch ${HOME}/.profile
 sudo echo "export PATH=$PATH:/usr/local/go/bin" >> ${HOME}/.profile
 sudo echo "export GOPATH=$HOME/go" >> ${HOME}/.profile
 sudo export PATH=$PATH:/usr/local/go/bin
-sudo export GOPATH=~/go
+sudo export GOPATH=${HOME}/go
+sudo chmod +xrw ${HOME}/go
 sudo mkdir -p $GOPATH/src
 echo "---"
 #################################################################
@@ -60,8 +61,8 @@ echo "---"
 echo "Installing and configuring VeChain..."
 sudo git clone https://github.com/vechain/thor.git $GOPATH/src/VeChain/thor > /dev/null 2>&1
 cd $GOPATH/src/VeChain/thor
-sudo make dep > /dev/null 2>&1
-sudo make all > /dev/null 2>&1
+make dep > /dev/null 2>&1
+make all > /dev/null 2>&1
 echo "---"
 ################################################################
 # Configure to auto start thor node at boot					    #
