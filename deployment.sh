@@ -17,8 +17,9 @@ cd ~
 sudo touch ${HOME}/.profile
 sudo echo "export PATH=$PATH:/usr/local/go/bin" >> ${HOME}/.profile
 sudo echo "export GOPATH=$HOME/go" >> ${HOME}/.profile
-sudo export PATH=$PATH:/usr/local/go/bin
-sudo export GOPATH=${HOME}/go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=${HOME}/go
+export network=${network}
 sudo chmod -R +xrw ${HOME}/go
 sudo mkdir -p $GOPATH/src
 echo "---"
@@ -78,6 +79,6 @@ fi
 # Start thor node					    #
 ################################################################
 #$GOPATH/src/VeChain/thor/bin/thor -network "$network"  > /dev/null 2>&1
-sudo $GOPATH/src/VeChain/thor/bin/thor -network "$network"
+sudo $GOPATH/src/VeChain/thor/bin/thor -network $network
 echo "VeChain thor node has been setup successfully and is running..."
 exit 0
