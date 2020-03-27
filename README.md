@@ -9,6 +9,9 @@ This repository performs below opeartions:
   - Installing additional external dependencies
   - Create a service script for restart on reboot
   - Start VeChain thor node
+  
+  ![Image description](link-to-image)
+  
 
 ### Usage
 Clone this repository and make sure the script has 'execute' access on the machine.
