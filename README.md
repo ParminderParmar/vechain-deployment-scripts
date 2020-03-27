@@ -10,7 +10,7 @@ This repository performs below opeartions:
   - Create a service script for restart on reboot
   - Start VeChain thor node
   
-  ![Image description](link-to-image)
+  ![Deployment Logs](https://github.com/ParminderParmar/vechain-deployment-scripts/blob/master/vechain-deployment-script-output.png?raw=true)
   
 
 ### Usage
