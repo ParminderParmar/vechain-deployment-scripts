@@ -18,7 +18,13 @@ Clone this repository and make sure the script has 'execute' access on the machi
 ./deployment.sh [NETWORK]
 ```
 
-#### Troubleshooting
+### Options
+Below options are supported as value of `NETWORK`
+* main: For starting VeChain thor node on mainnet
+* test: For starting VeChain thor node on testnet
+
+
+### Troubleshooting
 'Permission Denied' while running the script
 ```sh
 sudo chmod +x deployment.sh
